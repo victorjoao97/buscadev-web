@@ -9,6 +9,7 @@ import "./Main.css";
 
 import DevItem from './components/DevItem';
 import DevForm from './components/DevForm';
+import Header from './components/Header';
 
 function App() {
   const [devs, setDevs] = useState([]);
@@ -29,19 +30,22 @@ function App() {
   }
 
   return (
-    <div id="app">
-      <aside>
-        <strong>Cadastrar</strong>
-        <DevForm onSubmit={handleAddDev} />
-      </aside>
-      <main>
-        <ul>
-          {devs.map(dev => (
-            <DevItem dev={dev} key={dev._id} />
-          ))}
-        </ul>
-      </main>
-    </div>
+    <>
+      <Header></Header>
+      <div id="app">
+        <aside>
+          <strong>Cadastrar</strong>
+          <DevForm onSubmit={handleAddDev} />
+        </aside >
+        <main>
+          <ul>
+            {devs.map(dev => (
+              <DevItem dev={dev} key={dev._id} />
+            ))}
+          </ul>
+        </main>
+      </div>
+    </>
   );
 }
 

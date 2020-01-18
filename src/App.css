@@ -11,9 +11,11 @@
 #app main {
     margin-left: 30px;
 }
-
+#app #body {
+    flex-direction: row;
+}
 @media (max-width: 1000px){
-    #app {
+    #app { 
         flex-direction: column;
     }
     #app main {
